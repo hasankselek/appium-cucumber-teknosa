@@ -12,9 +12,12 @@ public class Teknosa {
     @Given("Uygulama baslatilir")
     public void uygulama_baslatilir() {
         Driver.getAndroidDriver();
+        ReusableMethods.bekle(3);
     }
     @Given("Ilk ekran bolumunden atlaya tiklanir")
     public void ılk_ekran_bolumunden_atlaya_tiklanir() {
+        page.atlaButonu.click();
+        ReusableMethods.bekle(2);
 
     }
     @Given("footer bolumunden {string} bolumune tiklanir")
@@ -33,16 +36,22 @@ public class Teknosa {
     public void filtrele_bolumune_tiklanir() {
         page.filtereButonu.click();
     }
-    @Given("Marka bolumunden marka secimi yapilir")
-    public void marka_bolumunden_marka_secimi_yapilir() {
+    @Given("Marka bolumunden marka secimi {string} yapilir")
+    public void marka_bolumunden_marka_secimi_yapilir(String markaSecim) {
+        page.markaSecimi(markaSecim);
+
 
     }
-    @Given("siralama yapilirak azalan fiyat secilir")
-    public void siralama_yapilirak_azalan_fiyat_secilir() {
+
+    @Given("siralama yapilirak {string} secilir")
+    public void siralama_yapilirak_azalan_fiyat_secilir(String siralamaTipi) {
+        ReusableMethods.scrollWithUiScrollableAndClick(siralamaTipi);
+        ReusableMethods.bekle(2);
 
     }
     @Given("fiyatlarin azalan duzende oldugu test edilir")
     public void fiyatlarin_azalan_duzende_oldugu_test_edilir() {
+        page.checkIfSortedInDescendingOrder();
 
     }
 }

@@ -7,11 +7,14 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 
-        features = {"src/test/resources/features"},
-        glue = {"stepDefitinions"},
-        tags = "@",
-        dryRun = true
+        features = "src/test/resources/features",
+        glue = "stepDefinitions",
+        tags = "@teknosa",
+
+        dryRun =false
+
 )
 
 public class runner {
+
 }

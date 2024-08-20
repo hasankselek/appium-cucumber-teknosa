@@ -36,12 +36,12 @@ public class Driver {
 
                 assert appiumServerURL != null;
                 appiumDriver = new AndroidDriver(appiumServerURL,options);
-                appiumDriver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+                appiumDriver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
             }else {
 
                 assert appiumServerURL != null;
                 iosDriver = new IOSDriver(appiumServerURL,options);
-                iosDriver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+                iosDriver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 
                 throw new UnsupportedOperationException("Dostum Ios kullanmaya calisiyorsun YAPMA!!");
 
